@@ -5,16 +5,16 @@ const cors=require("cors");
 const Rout=require('./routes/route')
 
 
-const App=express();
+const app=express();
 
-App.use(cors());
-App.use(express.json());
+app.use(cors());
+app.use(express.json());
 
 
 Connection();
-App.use("/",Rout);
-const PORT=process.env.PORT;
+app.use("/",Rout);
+const PORT=process.env.PORT || 6010;
 
-App.listen(PORT,()=>{
+app.listen(PORT,()=>{
     console.log(`server is running on port ${PORT}`)
 })
